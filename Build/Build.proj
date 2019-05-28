@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <BuildConfiguration>Release</BuildConfiguration>
+    <OutputDirectory>$(MSBuildProjectDirectory)\Output</OutputDirectory>
+    <EnableNuGetPackageRestore>true</EnableNuGetPackageRestore>
+    <MSBuildExtensionPackTasksPath>$(MSBuildProjectDirectory)\Tools\MSBuild.ExtensionPack\MSBuild.ExtensionPack.tasks</MSBuildExtensionPackTasksPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionPackTasksPath)"/>
+  <!-- 
+    Entry point Targets
+  -->
+  <!-- Build all projects, and create deployment artifacts -->
+  <Target Name="Build" DependsOnTargets="Clean;PackBinaries;ZipBinaries"/>
+  <!--
+    Common Targets
+  -->
+  <Target Name="Clean" DependsOnTargets="">
+    <RemoveDir Directories="$(OutputDirectory)"/>
+    <MakeDir Directories="$(OutputDirectory)"/>
+  </Target>
+
+  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    #Region Projects compilation
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+  <!--
+    Build the entire solution.
+  -->
+  <Target Name="BuildSolution" DependsOnTargets="">
+    <Message Text="++++++++++++++++++++++++++++++++" Importance="high"/>
+    <Message Text="BuildSolution" Importance="high"/>
+    <Message Text="++++++++++++++++++++++++++++++++" Importance="high"/>
+    <ItemGroup>
+      <ProjectToBuild Include="$(MSBuildProjectDirectory)\..\OpenStoreImport.sln">
+        <Properties>Configuration=$(BuildConfiguration);WarningLevel=0;</Properties>
+      </ProjectToBuild>
+    </ItemGroup>
+    <MSBuild Projects="@(ProjectToBuild)" Targets="Rebuild"/>
+  </Target>
+  <!-- 
+    Pack the binaries.
+  -->
+  <Target Name="PackBinaries" DependsOnTargets="BuildSolution;">
+    <Message Text="++++++++++++++++++++++++++++++++" Importance="high"/>
+    <Message Text="PackBinaries" Importance="high"/>
+    <Message Text="Output     : $(OutputDirectory)" Importance="high"/>
+    <Message Text="++++++++++++++++++++++++++++++++" Importance="high"/>
+    <PropertyGroup>
+      <BinariesOutputDirectory>$(OutputDirectory)\OpenStoreImport</BinariesOutputDirectory>
+    </PropertyGroup>
+    <ItemGroup>
+      <BinariesToCopy Include='$(MSBuildProjectDirectory)\..\OpenStoreImport\bin\$(BuildConfiguration)\**\*.*' />
+    </ItemGroup>
+
+    <RemoveDir Directories="$(BinariesOutputDirectory)"/>
+    <MakeDir Directories="$(BinariesOutputDirectory)"/>
+    
+    <Copy SourceFiles="@(BinariesToCopy)" DestinationFolder="$(BinariesOutputDirectory)"/>
+
+  </Target>
+  <!--
+	
+	
+		Zip Binaries
+	-->
+  <Target Name="ZipBinaries" DependsOnTargets="PackBinaries;">
+    <Message Text="++++++++++++++++++++++++++++++++" Importance="high"/>
+    <Message Text="ZipBinaries" Importance="high"/>
+    <Message Text="Output     : $(OutputDirectory)" Importance="high"/>
+    <Message Text="++++++++++++++++++++++++++++++++" Importance="high"/>
+    <MSBuild.ExtensionPack.Compression.Zip TaskAction="Create" 
+                                           CompressPath="$(BinariesOutputDirectory)" 
+                                           ZipFileName="$(OutputDirectory)\OpenStoreImport.zip"/>
+  </Target>
+
+</Project>

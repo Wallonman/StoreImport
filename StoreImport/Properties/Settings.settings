@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ZIndex.DNN.OpenStoreImport.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ImageBasePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Src\DNN\Portals\0\NBStore\images</Value>
+    </Setting>
+    <Setting Name="UnitCost" Type="System.Decimal" Scope="Application">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="ImageBaseUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/Portals/0/NBStore/images/</Value>
+    </Setting>
+    <Setting Name="Culture" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">fr-FR</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

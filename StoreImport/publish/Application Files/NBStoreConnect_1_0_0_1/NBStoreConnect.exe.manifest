@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="NBStoreConnect.exe" version="1.0.0.1" publicKeyToken="d553de204c4dbbd6" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Wallonman.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="NBStoreConnect" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="NBStoreConnect.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="log4net.dll" size="299008">
+      <assemblyIdentity name="log4net" version="1.2.11.0" publicKeyToken="669E0DDF0BB1AA2A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Gb4ZUQTFsnf5GwVmSxkqO+Fxc7q2jXMACY3H2xZTg5g=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="McPaquot.Utils.dll" size="6144">
+      <assemblyIdentity name="McPaquot.Utils" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>8GuIwzrYrIGPfwroDHkqC+xUuGp6Usb5ozq8QBNd5x0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NBStoreConnect.exe" size="71168">
+      <assemblyIdentity name="NBStoreConnect" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>9AYLcS2YtLxRVBh5yqOI73MpO5q3F7DFo1yRywsgbFg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="NBStoreConnect.exe.config" size="1393">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>J/SpCWbn0g3rRej1cDsVElTaPCnzTxil85Xeg2kkgp0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Wallonman.ico" size="13582">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>tPqKYo6YGH1tdC5gerZN+fkOAxuUB9B08T+cQUeC0eA=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=Vaio\Eric" issuerKeyHash="722b48c7a4adef69b0ad0fae604ed7cf286d2981" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>D8Knxq3t5szYzFuryGJ58tflNBkzAAegF2+GUeK0zYc=</DigestValue></Reference></SignedInfo><SignatureValue>fb6nRAcYMw5E8mNVmGXeWXC8ntRU4g09pEKROJiizEiu061XX9aHkHRbL7D0jzVO7JchAZFxjps0SrZW3AgyAjtyVr58d/4+hE4V3YpkSom/xH0vvWVTw/uruj61TKeqxUYfWYyNS8VZgm4okzzV4F3/iStmd8xAB1Sh4bdW0Hg=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>qSkCv/iTsDqT8/mdNxfX2IGH3XaRhWLql+FDKqRtGdGWpwLPK7nTUG/e5lZodKvlKlzQ+4yJahR5tG3GgUY8LAoJykWDubTih+Sbj7g16nHi8ms7X37Lv7eOpoxmTwY0nsgMiE32TKi+3EWDQGvyO3h7avakZ6ikifJcrwKEjdE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="87cdb4e251866f17a00700331934e5d7f27962c8ab5bccd8cce6edadc6a7c20f" Description="" Url=""><as:assemblyIdentity name="NBStoreConnect.exe" version="1.0.0.1" publicKeyToken="d553de204c4dbbd6" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Vaio\Eric</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Ghf815NtWJf73RcNIiRKe07zjYEVAMTEXk3XA1xP5XU=</DigestValue></Reference></SignedInfo><SignatureValue>QPtwAU5/ER5yTxFUBdSWMuNUlSw7A6vJhtdLkssFaBYkATU775Kxby5MS5COv1/iaCmQJW/+rCyC0yg1ZMzvyQFhPfDsyZsUy3wfsEYvronwfrwaH8lPvzAdj81sCXXVLTRiu0b2BynuwIf5IXEbCKr7valeQI8TLKXtNEmWc4s=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>qSkCv/iTsDqT8/mdNxfX2IGH3XaRhWLql+FDKqRtGdGWpwLPK7nTUG/e5lZodKvlKlzQ+4yJahR5tG3GgUY8LAoJykWDubTih+Sbj7g16nHi8ms7X37Lv7eOpoxmTwY0nsgMiE32TKi+3EWDQGvyO3h7avakZ6ikifJcrwKEjdE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBvTCCASagAwIBAgIQFtjgVNvPCbxOtZew0CUKoTANBgkqhkiG9w0BAQsFADAdMRswGQYDVQQDHhIAVgBhAGkAbwBcAEUAcgBpAGMwHhcNMTQwMjA4MDg1NjUxWhcNMTUwMjA4MTQ1NjUxWjAdMRswGQYDVQQDHhIAVgBhAGkAbwBcAEUAcgBpAGMwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAKkpAr/4k7A6k/P5nTcX19iBh912kYVi6pfhQyqkbRnRlqcCzyu501Bv3uZWaHSr5Spc0PuMiWoUebRtxoFGPCwKCcpFg7m04ofkm4+4Nepx4vJrO19+y7+3jqaMZk8GNJ7IDIhN9kyovtxFg0Br8jt4e2r2pGeopInyXK8ChI3RAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAn4mFarQAwxi18LJg+gqRrUMuyysKfJ66Jlx7Lg9p8ESAOKYC5/0IdqReFipscrJZFDgX/6ffslvBXGlNRsjYRuuj4eCQFw8aPM0whavCmBrmcZFitsdR8vCyAgM+MOCPIDsxlgwiJghUxnd+guv6l0GMyh2OIj5Upt6F+OfWtHE=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

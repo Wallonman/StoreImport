@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="NBStoreConnect.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+    </startup>
+    <applicationSettings>
+        <NBStoreConnect.Properties.Settings>
+            <setting name="ImageBaseUrl" serializeAs="String">
+                <value>/mcpaquot/Portals/0/productimages/</value>
+            </setting>
+            <setting name="ImageBasePath" serializeAs="String">
+                <value>C:\Users\Eric\Documents\Work\Svn\McPaquot\Website\Portals\0\productimages\</value>
+            </setting>
+            <setting name="UnitCost" serializeAs="String">
+                <value>1</value>
+            </setting>
+            <setting name="Culture" serializeAs="String">
+                <value>fr-FR</value>
+            </setting>
+        </NBStoreConnect.Properties.Settings>
+    </applicationSettings>
+</configuration>
