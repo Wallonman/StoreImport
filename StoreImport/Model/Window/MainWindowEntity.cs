@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using ZIndex.DNN.OpenStoreImport.Properties;
@@ -44,6 +45,8 @@ namespace ZIndex.DNN.OpenStoreImport.Model.Window
         public string ImageBasePath { get; set; }
         public string ImageBaseUrl { get; set; }
         public string Culture { get; set; }
+        public string Format { get; set; }
+        public List<string> AvailableFormats { get; set; }
         public bool GenerateZip { get; set; }
 
         public override string ToString()

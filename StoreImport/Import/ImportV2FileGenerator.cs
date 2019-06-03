@@ -160,5 +160,8 @@ namespace ZIndex.DNN.OpenStoreImport.Import
 
             return XElement.Parse(element);
         }
+
+        public string FileExtension => "xml";
+
     }
 }

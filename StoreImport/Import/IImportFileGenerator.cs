@@ -6,5 +6,7 @@ namespace ZIndex.DNN.OpenStoreImport.Import
     public interface IImportFileGenerator
     {
         void Generate(TextWriter writer, Store store);
+
+        string FileExtension { get; }
     }
 }

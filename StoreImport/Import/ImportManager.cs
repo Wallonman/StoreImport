@@ -22,7 +22,7 @@ namespace ZIndex.DNN.OpenStoreImport.Import
             decimal productUnitCost, bool generateZip)
         {
             var store = _storeParser.Parse(rootPath, culture, imageBasePath, imageBaseUrl, productUnitCost);
-            var xmlFilename = Path.Combine(rootPath, string.Concat(Path.GetFileNameWithoutExtension(rootPath), ".csv"));//todo : extension to provide
+            var xmlFilename = Path.Combine(rootPath, string.Concat(Path.GetFileNameWithoutExtension(rootPath), ".", _importFileGenerator.FileExtension));
             var zipFilename = Path.Combine(rootPath, string.Concat(Path.GetFileNameWithoutExtension(rootPath), ".zip"));
 
             _log.Info("Generating file {0}", xmlFilename);

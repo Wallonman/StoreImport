@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Threading;
 using System.Windows;
 using System.Windows.Forms;
@@ -25,6 +27,7 @@ namespace ZIndex.DNN.OpenStoreImport
         {
             InitializeComponent();
 
+            var formats = new List<string> {"WooCommerce", "Openstore (v4)"};
             DataContext = _entity = new MainWindowEntity
             {
                 UnitCost = Settings.Default.UnitCost.ToString(CultureInfo.InvariantCulture),
@@ -32,6 +35,8 @@ namespace ZIndex.DNN.OpenStoreImport
                 ImageBasePath = Settings.Default.ImageBasePath,
                 ImageBaseUrl = Settings.Default.ImageBaseUrl,
                 GenerateZip = true,
+                AvailableFormats = formats,
+                Format = formats.First(),
             };
         }
 
@@ -77,10 +82,21 @@ namespace ZIndex.DNN.OpenStoreImport
                 AppendStatusText($"--- Début de la génération à {DateTime.Now} ---------");
                 AppendStatusText(_entity.ToString());
 
-
+                IImportFileGenerator generator = null;
+                switch (_entity.Format)
+                {
+                    case "WooCommerce":
+                        generator = new WooCommerceImportFileGenerator(new StoreConverter());
+                        break;
+                    case "Openstore (v4)":
+                        generator = new ImportV4FileGenerator(new OpenStoreConverter());
+                        break;
+                }
+  
                 var importManager = new ImportManager(new StoreParser(new CategoriesParser(), new ProductsParser())
 //                    new ImportV4FileGenerator(new OpenStoreConverter())
-                    , new WooCommerceImportFileGenerator(new StoreConverter())
+//                    , new WooCommerceImportFileGenerator(new StoreConverter())
+                    , generator
                     , new ZipFileGenerator());
 
                 importManager.GenerateImportFiles(_entity.SrcPath
@@ -92,7 +108,7 @@ namespace ZIndex.DNN.OpenStoreImport
                 );
 
 
-                AppendStatusText($"Fichiers Xml et Zip créés dans {_entity.SrcPath}");
+                AppendStatusText($"Fichiers d'import et Zip créés dans {_entity.SrcPath}");
                 AppendStatusText($"--- Fin de la génération à {DateTime.Now} ---------");
             }
             catch (Exception ex)

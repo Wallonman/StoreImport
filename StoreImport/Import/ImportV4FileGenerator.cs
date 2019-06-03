@@ -46,5 +46,6 @@ namespace ZIndex.DNN.OpenStoreImport.Import
 
         }
 
+        public string FileExtension => "xml";
     }
 }
